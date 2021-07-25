@@ -1,0 +1,55 @@
+{% extends 'layouts/base.html' %}
+
+{% block content %}
+<div class="modal-dialog">
+<div class="modal-content">
+<form method="post" action="{% url 'create-pdf' %}" style="margin: 100px; padding: 500;">
+	{% csrf_token %}
+	
+	  <div class="form-row">
+						
+		
+		<div class="form-group">
+			<label>Login</label>
+			<input type="text " class="form-control" required name="login">
+		</div>
+
+    <div class="form-group">
+      <label>Type d'utilisateur </label>
+        <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="type utilisateur">
+          <option selected>Votre choix </option>
+          <option value="J.C. NGOYE">Secretaire</option>
+          <option value="NAMBILA">Chef contact</option>
+          <option value="MOUKELI">Admin</option>
+          
+        </select>
+      </div>
+
+    <div class="form-group">
+			<label>Mot de passe </label>
+			<input type="text " class="form-control" required name="login">
+		</div>
+
+
+    <div class="form-group">
+			<label>Confirmer le Mot de passe </label>
+			<input type="text " class="form-control" required name="login">
+		</div>						
+	</div>
+
+  
+	<div class="modal-footer">
+		<input type="button" class="btn btn-default" data-dismiss="modal" value="Annuler">
+		<input type="submit" class="btn btn-success" value="Enregistrer">
+	</div>
+</form>
+   	</div>
+</div>
+
+<b>bonjour a tous </b>
+
+
+
+
+
+{% endblock %}

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            dashboad
+        </title>
+    </head>
+    <body>
+        {% if request.user.is_authenticated%}
+            <p>Salut {{request.user }}</p>
+            <a href="{% url 'infosignataire'%}"></a>
+        {% else %}
+        <p>Salut anonyme</p>
+        {% endif %}
+    </body>
+</html>

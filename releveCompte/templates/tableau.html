@@ -1,0 +1,74 @@
+{% extends 'layouts/base.html' %}
+
+
+{% block content %}
+
+
+
+<div class="modal-dialog">
+  <div class="modal-content">
+<form method="post" action="{% url 'create-pdf' %}" style="margin: 100px; padding: 500;">
+	{% csrf_token %}
+	
+	  <div class="form-row">
+						
+		<!-- <div class="form-group">
+			
+			<label>Choisi le numéro de compte </label>
+			<select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="numero">
+			  <option selected>Votre choix </option>
+			  <option value="1254">1254</option>
+			  <option value="8546">8546</option>
+			  <option value="4125">4125</option>
+			  <option value="9134">9134</option>
+			</select>
+		</div> -->
+		<div class="form-group">
+			<label>NUMERO</label>
+			<input type="number " class="form-control" required name="numero">
+		</div>
+		<!-- <div class="form-group">
+			<label>Montant</label>
+			<input type="number " class="form-control" required name="montant">
+		</div> -->
+		   <!-- <div style="margin: 150px;">
+			<select class="form-control form-control-lg">
+				<option>Large select</option>
+			  </select>
+		   </div> -->
+			
+		  
+		<div class="form-group">
+		<label>Premier signataire </label>
+			<select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="sign1">
+			  <option selected>Votre choix </option>
+			  <option value="J.C. NGOYE">J.C. NGOYE</option>
+			  <option value="NAMBILA">NAMBILA</option>
+			  <option value="MOUKELI">MOUKELI</option>
+			  <option value="MATY">MATY</option>
+			</select>
+		</div>
+
+		<div class="form-group">
+			<label>Deuxieme signataire </label>
+				<select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="sign2">
+				  <option selected>Votre choix </option>
+				  <option value="J.C. NGOYE">S. MENBE</option>
+				  <option value="NAMBILA">NAMBILA</option>
+				  <option value="MOUKELI">MOUKELI</option>
+				  <option value="MATY">MATY</option>
+				</select>
+			</div>
+							
+	</div>
+  
+	<div class="modal-footer">
+		<input type="button" class="btn btn-default" data-dismiss="modal" value="Annuler">
+		<input type="submit" class="btn btn-success" value="Afficher">
+	</div>
+</form>
+   <img src="{{image.path}}" alt="">
+	</div>
+</div>
+
+{% endblock %}

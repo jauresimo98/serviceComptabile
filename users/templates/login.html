@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            login area
+        </title>
+    </head>
+    <body>
+        <form action="{%url 'login' %}" method="POST">
+            {%csrf_token%}
+            {{form}}
+            <button type="submit">Login</button>
+        </form>
+    </body>
+</html>

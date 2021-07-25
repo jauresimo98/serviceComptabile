@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title> {% block title %} {% endblock %} </title>
+    <meta name="description" content="Panneau d'administration du syteme gestion de compagnie aerienne" />
+    
+    {% include "layouts/head.html" %}
+
+</head>
+<style>
+    body {
+ background-image: url("logo.jpg");
+ background-color: #381e1e;
+}
+</style>
+
+<body>
+    {% include "layouts/navb.html" %}
+	
+	
+    <div class="hk-wrapper hk-vertical-nav">       
+
+        
+
+        <!-- Main Content -->
+        {% block content %} {% endblock %}
+</div>
+       
+
+<div>
+    {% include "layouts/footer.html" %}
+</div>
+    
+    
+</body>
+
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    {% load static %}
+    <style>
+        body{
+            width:800px;
+            margin:auto;
+        }
+    </style>
+    <body>
+        <table>
+            <tr>
+                <td with="500" style="text-align: center; width:500px;">
+                        BANQUE DES ETATS<br/>
+                        DE<br/>
+                        L'AFRIQUE CENTRALE<br/>
+                        <img src="{% static 'images/logo.jpg' %}" alt="" width='50px'><br/>
+                        REPUBLIQUE GABONAISE<br/>
+                         ---------<br/>
+                        <small>Siège Social et Direction Nationale</small>  <br/>
+                        LIBREVILLE<br/>
+                        ----------<br/>
+                        B.P 112-Tél. : 1176-13-52/1176-02-09<br/>
+                        ----------<br/>
+                        <strong> Service Comptabilite et Operation Financieres </strong> <br/>
+                </td>
+                <td  with="500" style="width:100px;">
+
+                </td>
+                <td  with="500" style="width:500px; vertical-align: top;">
+                    Libreville, le<br/><br/><br/><br/><br/>
+                    <strong> {{releve.nomDestinataire}} </strong> <br/><br/>
+                   <b><u>LIBREVILLE</u></b>  
+                </td>
+            </tr>
+        </table>
+        <div style="padding: 10px; margin: 10px; font-size: 20px;">
+            <p >JCN/MGAN</p> 
+            <h4>N° ____________/SCOF/2021</h4><br>
+            <strong>Objet</strong> : Relevé de votre compte N° 50 331101 {{releve.numero}} <br>
+            &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp du <strong>  1<sup>er</sup> </strong> au <strong> 31 janvier </strong>
+            <p>  <strong>&nbsp &nbsp  {{releve.nomDestinataire}} ,</strong> </p>
+            <p>&nbsp &nbsp  J’ai l'honneur de vous adresser ci-joint le relevé de votre compte   <strong>  N° 50 331101 {{releve.numero}}  </strong> 
+                dans nos livres arrêté en capitaux au 31 janvier 2021, présentant un solde créditeur de Francs CFA <strong> {{releve.montant}} </strong>  
+                <strong> ( {{nombrelettre}}). </strong> 
+            </p>
+            <p>Sans observation de votre part reçue dans un délai de trente (30) jours calendaires à compter de la date de réception, l'ensemble des écritures de votre relevé ainsi que 
+                le solde arrêté du mois seront considérés comme approuves et ne pourront plus faire l'objet de réclamation.</p>
+                <p>Vous voudrez bien retourner la formule de bien trouve ci-joint</p>
+                <p>Veuillez agréer, <strong>{{releve.nomDestinataire}},   </strong>  l'expression de ma parfaite considération.   </p>
+        
+        <table>
+
+
+            <tr>
+                <td with="500" style="text-align: center; width:500px;">
+
+                </td>
+                <td with="500" style="text-align: right; width:0px;">
+                    <h4> &nbsp P/Le Directeur National,</h4>
+                </td>
+                <td with="500" style="width:500px; vertical-align: top;">
+                    
+                </td>
+            </tr>
+            <tr>
+                <td with="500" style="text-align: center; width:500px;">
+
+                </td>
+                <td with="500" style="text-align: left; width:500px;">
+                    <h4>{{dest1}}</h4>
+                </td>
+                <td with="500" style="width:500px; vertical-align: top;">
+                    <h4>{{dest2}}</h4>
+                </td>
+            </tr>
+            <tr>
+                <td>PJ/</td>
+            </tr>
+        </table>
+    </div>
+    <a href="{%url 'create-pdf'%}"> new lien </a>
+      
+    </body>
+</html>
